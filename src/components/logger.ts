@@ -1,4 +1,7 @@
 import { createLogger, transports, format } from 'winston';
+import { flatten } from 'lodash';
+
+import config from './config';
 
 type Level = 'error' | 'warn' | 'info';
 type DefaultMeta = {
@@ -10,14 +13,15 @@ type DefaultMeta = {
 const getLogger = (level: Level = 'info', defaultMeta?: DefaultMeta) => {
   const { Console } = transports;
   const {
-    combine, timestamp, json, splat,
+    combine, timestamp, json, splat, errors,
   } = format;
   const logger = createLogger({
     level,
     format: combine(
+      errors({ stack: true }),
       splat(),
       timestamp(),
-      json()
+      json(),
     ),
     defaultMeta,
     transports: [
@@ -27,15 +31,29 @@ const getLogger = (level: Level = 'info', defaultMeta?: DefaultMeta) => {
   return logger;
 };
 
+const formatRest = (...rest: any[]) => {
+  const flattenRest = flatten(rest);
+  flattenRest.forEach((element, index) => {
+    if (element instanceof Error) {
+      flattenRest.splice(index, 1);
+      flattenRest.push(`${element.name}: ${element.message}`);
+      if (config.nodeEnv === 'development') {
+        flattenRest.push(element.stack);
+      }
+    }
+  });
+  return flattenRest;
+};
+
 const logger = (defaultMeta?: DefaultMeta) => ({
   error(...rest: any[]) {
-    getLogger('error', defaultMeta).error(rest);
+    getLogger('error', defaultMeta).error(formatRest(rest));
   },
   warn(...rest: any[]) {
-    getLogger('warn', defaultMeta).warn(rest);
+    getLogger('warn', defaultMeta).warn(formatRest(rest));
   },
   info(...rest: any[]) {
-    getLogger('info', defaultMeta).info(rest);
+    getLogger('info', defaultMeta).info(formatRest(rest));
   },
 });
 

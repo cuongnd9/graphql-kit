@@ -33,7 +33,7 @@ Category.init({
   },
 }, {
   sequelize,
-  modelName: 'categories'
+  modelName: 'categories',
 });
 
 export default Category;

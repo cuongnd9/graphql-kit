@@ -29,7 +29,7 @@ export const formatError = (error: GraphQLError) => {
 export const migrateDB = (sequelize: Sequelize, path: string) => new Umzug({
   migrations: {
     path,
-    pattern: /\.migration.ts$/,
+    pattern: /\.migration.[t|j]s$/,
     params: [
       sequelize.getQueryInterface(),
       sequelize.constructor,

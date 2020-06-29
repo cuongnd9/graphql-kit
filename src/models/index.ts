@@ -9,6 +9,7 @@ const sequelize = new Sequelize({
   database: config.pgDB,
   host: config.pgHost,
   port: config.pgPort,
+  // eslint-disable-next-line no-console
   logging: config.nodeEnv === 'development' ? console.log : false,
   define: {
     underscored: true,

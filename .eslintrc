@@ -74,13 +74,13 @@
     "@typescript-eslint/no-explicit-any": [
       "off"
     ],
-    "@typescript-eslint/no-var-requires": "warn",
+    "@typescript-eslint/no-var-requires": "off",
     "import/no-mutable-exports": "warn",
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "import/no-named-default": "warn",
-    "import/no-dynamic-require": "warn",
+    "import/no-dynamic-require": "off",
     "promise/always-return": "warn",
     "promise/no-return-wrap": "error",
     "promise/param-names": "error",
