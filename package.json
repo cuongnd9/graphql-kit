@@ -1,5 +1,5 @@
 {
-  "name": "service-template",
+  "name": "graphql-kit",
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
