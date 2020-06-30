@@ -13,12 +13,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "@typescript-eslint/explicit-function-return-type": [
-      "off"
-    ],
-    "@typescript-eslint/no-explicit-any": [
-      "off"
-    ],
     "max-len": [
       2,
       {
@@ -37,11 +31,11 @@
         "functions": "ignore"
       }
     ],
+    "no-sequences": "warn",
     "global-require": "off",
     "new-cap": "off",
+    "no-shadow": "warn",
     "consistent-return": "off",
-    "import/prefer-default-export": "off",
-    "react/static-property-placement": "off",
     "semi": [
       "error",
       "always"
@@ -49,12 +43,17 @@
     "class-methods-use-this": "off",
     "max-classes-per-file": "off",
     "require-await": "error",
-    "camelcase": "off",
-    "@typescript-eslint/ban-ts-ignore": "off",
+    "no-useless-constructor": "warn",
+    "camelcase": "warn",
+    "arrow-parens": "warn",
     "lines-between-class-members": [
       "error",
       "always"
     ],
+    "prefer-destructuring": "warn",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/camelcase": "warn",
+    "@typescript-eslint/ban-ts-ignore": "warn",
     "@typescript-eslint/no-empty-interface": "warn",
     "@typescript-eslint/member-delimiter-style": [
       "error",
@@ -69,8 +68,20 @@
         }
       }
     ],
+    "@typescript-eslint/explicit-function-return-type": [
+      "off"
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      "off"
+    ],
+    "@typescript-eslint/no-var-requires": "off",
+    "import/no-mutable-exports": "warn",
     "import/extensions": "off",
-    "promise/always-return": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "import/no-named-default": "warn",
+    "import/no-dynamic-require": "off",
+    "promise/always-return": "warn",
     "promise/no-return-wrap": "error",
     "promise/param-names": "error",
     "promise/catch-or-return": "error",
