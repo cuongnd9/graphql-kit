@@ -1,11 +1,16 @@
+scripts/
 node_modules/
 .git/
 
-.gitignore
-.env
-.env.example
-.eslintrc
-.eslintignore
+.commitlintrc.json
 .editorconfig
-
+.eslintignore
+.eslintrc
+.gitignore
+.mocharc.json
+.nycrc
+docker-compose-dev.yaml
+Dockerfile
+Dockerfile.dev
+LICENSE
 README.md
