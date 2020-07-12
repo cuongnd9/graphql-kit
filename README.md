@@ -13,8 +13,7 @@
 ## How to use?
 
 ```sh
-$ yarn
-$ yarn start
+cd scripts && ./start.sh
 ```
 
 🙌 Awesome
