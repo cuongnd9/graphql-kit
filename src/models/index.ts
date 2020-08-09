@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize';
+import { logger } from 'juno-js';
 
-import { config, logger } from '../components';
+import { config } from '../components';
 
 const sequelize = new Sequelize({
   dialect: 'postgres',

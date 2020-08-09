@@ -1,9 +1,10 @@
 import { ApolloServer } from 'apollo-server';
 import { makeExecutableSchema } from 'graphql-tools';
+import { logger } from 'juno-js';
 
 import typeDefs from './typeDefs';
 import resolvers from './resolvers';
-import { logger, formatError, config } from './components';
+import { formatError, config } from './components';
 
 const app = () => {
   const schema = makeExecutableSchema({
