@@ -20,7 +20,7 @@ const sequelize = new Sequelize({
 sequelize
   .authenticate()
   .catch((e) => {
-    logger().error('Sequelize authentication failed: ', e);
+    logger.error('Sequelize authentication failed: ', e);
   });
 
 export default sequelize;

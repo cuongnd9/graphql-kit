@@ -3669,10 +3669,10 @@ jsonparse@^1.2.0:
   resolved "https://registry.yarnpkg.com/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
   integrity sha1-P02uSpH6wxX3EGL4UhzCOfE2YoA=
 
-juno-js@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/juno-js/-/juno-js-0.1.0.tgz#5c4a00b6a07890c9ea086e584986883046c210a9"
-  integrity sha512-5SPE+vht1vOnDBLABDe8ksmb/IP0UE2y6B/W/Pr4byop28mmZ2pBHODnJdoAr3LuapkJ4Avm0MEwqscbPWQNXA==
+juno-js@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/juno-js/-/juno-js-0.1.1.tgz#c5baeacd4de9d2a099575840e1cfc46e1623b68f"
+  integrity sha512-Pz5SdwpSEge7CT/y1smRikZfWRqidk9oseNiUjBVd9gJhnfbKu2skPPszVL2gOjcUfnu2ii4oqJ/aElKqbhHxg==
   dependencies:
     lodash "^4.17.19"
     winston "^3.3.3"
