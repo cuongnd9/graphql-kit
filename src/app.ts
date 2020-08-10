@@ -19,8 +19,8 @@ const app = () => {
 
   server
     .listen(config.port)
-    .then(({ url }) => logger().info(`🚀 Server ready at ${url}`))
-    .catch((error) => logger().error('Apollo Server error', error));
+    .then(({ url }) => logger.info(`🚀 Server ready at ${url}`))
+    .catch((error) => logger.error('Apollo Server error', error));
 };
 
 export default app;
