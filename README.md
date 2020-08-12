@@ -44,10 +44,6 @@ yarn start:dev
 cd scripts && ./start.sh
 ```
 
-<p>
-  <img src="https://github.com/103cuong/103cuong/blob/master/cat.gif" alt="cat" width="200" />
-</p>
-
 🙌 Awesome
 
 ## License
