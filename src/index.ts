@@ -2,8 +2,7 @@ import path from 'path';
 import { logger, globalOptions } from 'juno-js';
 
 import { migrateDB, config } from './components';
-import sequelize from './models';
-import { associate } from './models/association';
+import { sequelize, associate } from './models/sequelize';
 import app from './app';
 
 globalOptions.environment = config.nodeEnv;

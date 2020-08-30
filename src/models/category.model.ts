@@ -1,6 +1,6 @@
 import { Model, DataTypes } from 'sequelize';
 
-import sequelize from '.';
+import { sequelize } from './sequelize';
 import Cat from './cat.model';
 
 class Category extends Model {
