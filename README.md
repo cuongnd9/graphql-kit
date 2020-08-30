@@ -5,7 +5,7 @@
 
 > 🛸🚀 A Node kit with TypeScript, GraphQL, Sequelize, PostgreSQL and awesome tools.
 
-## Prepare
+## Preparation
 
 - [Node](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/)
@@ -41,11 +41,13 @@ yarn start:dev
 ### Use with Docker + Docker Compose
 
 ```sh
-cd scripts && ./start.sh
+yarn docker-compose:start
+yarn docker-compose:stop
+yarn docker-compose:rebuild
 ```
 
 🙌 Awesome
 
 ## License
 
-MIT © [103cuong](https://github.com/103cuong)
+MIT © [Cuong Tran](https://github.com/103cuong)
