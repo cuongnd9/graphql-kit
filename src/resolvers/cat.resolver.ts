@@ -2,9 +2,9 @@ import joi from 'joi';
 
 import { middleware, schemaValidation } from '../components';
 import CatService from '../services/cat.service';
-import { MutationCreateCatArgs, Cat } from '../types/graphql.type';
+import { MutationCreateCatArgs, Cat, Resolvers } from '../types/graphql.type';
 
-const resolver = {
+const resolver: Resolvers = {
   Query: {
     cats: (): Promise<Cat[]> => CatService.getCats(),
   },

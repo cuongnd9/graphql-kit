@@ -1,7 +1,7 @@
 import CategoryService from '../services/category.service';
-import { MutationCreateCategoryArgs, Category } from '../types/graphql.type';
+import { MutationCreateCategoryArgs, Category, Resolvers } from '../types/graphql.type';
 
-const resolver = {
+const resolver: Resolvers = {
   Query: {
     categories: (): Promise<Category[]> => CategoryService.getCategories(),
   },
