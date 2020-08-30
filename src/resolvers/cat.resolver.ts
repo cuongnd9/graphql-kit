@@ -2,18 +2,18 @@ import joi from 'joi';
 
 import { middleware, schemaValidation } from '../components';
 import CatService from '../services/cat.service';
-import { CatCreationInput } from '../types/cat.type';
+import { MutationCreateCatArgs, Cat, Resolvers } from '../types/graphql.type';
 
-const resolver = {
+const resolver: Resolvers = {
   Query: {
-    cats: () => CatService.getCats(),
+    cats: (): Promise<Cat[]> => CatService.getCats(),
   },
   Mutation: {
     createCat: middleware(
       schemaValidation({
         color: joi.string().valid('black', 'white'),
       }),
-      (_: any, args: CatCreationInput) => CatService.createCat(args),
+      (_: any, args: MutationCreateCatArgs): Promise<Cat> => CatService.createCat(args),
     ),
   },
 };

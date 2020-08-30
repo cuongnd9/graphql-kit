@@ -1,1 +1,2 @@
 build/*
+src/types/graphql.type.ts

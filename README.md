@@ -46,6 +46,12 @@ yarn docker-compose:stop
 yarn docker-compose:rebuild
 ```
 
+### Build GraphQL type
+
+```sh
+yarn build:graphql
+```
+
 🙌 Awesome
 
 ## License

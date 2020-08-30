@@ -1,10 +1,11 @@
 import sequelize from '../models';
 import Cat from '../models/cat.model';
-import Category from '../models/category.model';
+import CategoryModel from '../models/category.model';
+import { MutationCreateCategoryArgs, Category } from '../types/graphql.type';
 
 class CategoryService {
-  static getCategories() {
-    return Category.findAll({
+  static getCategories(): Promise<Category[]> {
+    return CategoryModel.findAll({
       include: [
         {
           model: Cat,
@@ -14,8 +15,8 @@ class CategoryService {
     });
   }
 
-  static createCategory({ name }: { name: string }) {
-    return sequelize.transaction((transaction) => Category.create({
+  static createCategory({ name }: MutationCreateCategoryArgs): Promise<Category> {
+    return sequelize.transaction((transaction) => CategoryModel.create({
       name,
     }, { transaction }));
   }
