@@ -6,6 +6,7 @@
     "start:dev": "nodemon --ignore build/ --exec ts-node src/index.ts",
     "prebuild": "rm -rf build",
     "build": "tsc -p tsconfig.build.json",
+    "build:graphql": "graphql-codegen --config codegen.yml",
     "start": "node ./build/index.js",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts",
@@ -43,6 +44,9 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@graphql-codegen/cli": "1.17.8",
+    "@graphql-codegen/typescript": "1.17.8",
+    "@graphql-codegen/typescript-resolvers": "^1.17.9",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.11",
     "@types/faker": "^4.1.12",

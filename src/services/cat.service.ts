@@ -1,11 +1,11 @@
 import sequelize from '../models';
-import Cat from '../models/cat.model';
+import CatModel from '../models/cat.model';
 import Category from '../models/category.model';
-import { CatCreationInput } from '../types/cat.type';
+import { MutationCreateCatArgs, Cat } from '../types/graphql.type';
 
 class CatService {
-  static getCats() {
-    return Cat.findAll({
+  static getCats(): Promise<Cat[]> {
+    return CatModel.findAll({
       include: [
         {
           model: Category,
@@ -15,8 +15,8 @@ class CatService {
     });
   }
 
-  static createCat({ name, color, categoryId }: CatCreationInput) {
-    return sequelize.transaction((transaction) => Cat.create({
+  static createCat({ name, color, categoryId }: MutationCreateCatArgs): Promise<Cat> {
+    return sequelize.transaction((transaction) => CatModel.create({
       name,
       color,
       categoryId,
