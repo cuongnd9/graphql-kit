@@ -10,7 +10,10 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts",
     "test": "NODE_PATH=./ NODE_ENV=test mocha --exit",
-    "test:coverage": "NODE_PATH=./ NODE_ENV=test nyc mocha --exit"
+    "test:coverage": "NODE_PATH=./ NODE_ENV=test nyc mocha --exit",
+    "docker-compose:start": "./scripts/start.sh",
+    "docker-compose:stop": "./scripts/stop.sh",
+    "docker-compose:rebuild": "./scripts/rebuild.sh"
   },
   "lint-staged": {
     "*.ts": [
