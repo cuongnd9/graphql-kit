@@ -1,4 +1,4 @@
-import sequelize from '../models';
+import { sequelize } from '../models/sequelize';
 import Cat from '../models/cat.model';
 import CategoryModel from '../models/category.model';
 import { MutationCreateCategoryArgs, Category } from '../types/graphql.type';

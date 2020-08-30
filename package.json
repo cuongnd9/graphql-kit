@@ -2,6 +2,7 @@
   "name": "graphql-kit",
   "version": "1.0.0",
   "main": "src/index.ts",
+  "description": "🍣 A Node kit with TypeScript, GraphQL, Sequelize, PostgreSQL and awesome tools.",
   "scripts": {
     "start:dev": "nodemon --ignore build/ --exec ts-node src/index.ts",
     "prebuild": "rm -rf build",

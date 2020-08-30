@@ -3,7 +3,7 @@
 [![Hits-of-Code](https://hitsofcode.com/github/103cuong/graphql-kit)](https://hitsofcode.com/view/github/103cuong/graphql-kit)
 [![GitHub](https://img.shields.io/github/license/103cuong/graphql-kit.svg)](https://github.com/103cuong/graphql-kit/blob/master/LICENSE)
 
-> 🛸🚀 A Node kit with TypeScript, GraphQL, Sequelize, PostgreSQL and awesome tools.
+🍣 A Node kit with TypeScript, GraphQL, Sequelize, PostgreSQL and awesome tools.
 
 ## Preparation
 
