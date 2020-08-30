@@ -1,12 +1,17 @@
-import CategoryService from '../services/category.service';
-import { MutationCreateCategoryArgs, Category, Resolvers } from '../types/graphql.type';
+import { CategoryService } from '../services/category.service';
+import { MutationCreateCategoryArgs, Category } from '../types/graphql.type';
+import { Resolvers } from '../types';
 
 const resolver: Resolvers = {
   Query: {
-    categories: (): Promise<Category[]> => CategoryService.getCategories(),
+    categories: (_: any, __: any, { models }): Promise<Category[]> => new CategoryService(models).getCategories(),
   },
   Mutation: {
-    createCategory: (_: any, args: MutationCreateCategoryArgs): Promise<Category> => CategoryService.createCategory(args),
+    createCategory: (
+      _: any,
+      args: MutationCreateCategoryArgs,
+      { models }
+    ): Promise<Category> => new CategoryService(models).createCategory(args),
   },
 };
 

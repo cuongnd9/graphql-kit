@@ -4,6 +4,7 @@ import { logger } from 'juno-js';
 
 import typeDefs from './typeDefs';
 import resolvers from './resolvers';
+import { models } from './models';
 import { formatError, config } from './components';
 
 const app = () => {
@@ -14,6 +15,10 @@ const app = () => {
 
   const server = new ApolloServer({
     schema,
+    context: (ctx) => ({
+      ...ctx,
+      models,
+    }),
     formatError,
   });
 

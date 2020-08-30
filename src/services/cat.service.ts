@@ -1,22 +1,20 @@
-import { sequelize } from '../models/sequelize';
-import CatModel from '../models/cat.model';
-import Category from '../models/category.model';
+import { PureService } from './pure.service';
 import { MutationCreateCatArgs, Cat } from '../types/graphql.type';
 
-class CatService {
-  static getCats(): Promise<Cat[]> {
-    return CatModel.findAll({
+class CatService extends PureService {
+  getCats(): Promise<Cat[]> {
+    return this.models.Cat.findAll({
       include: [
         {
-          model: Category,
+          model: this.models.Category,
           as: 'category',
         },
       ],
     });
   }
 
-  static createCat({ name, color, categoryId }: MutationCreateCatArgs): Promise<Cat> {
-    return sequelize.transaction((transaction) => CatModel.create({
+  createCat({ name, color, categoryId }: MutationCreateCatArgs): Promise<Cat> {
+    return this.models.sequelize.transaction((transaction) => this.models.Cat.create({
       name,
       color,
       categoryId,
@@ -24,4 +22,4 @@ class CatService {
   }
 }
 
-export default CatService;
+export { CatService };
