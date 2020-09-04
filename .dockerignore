@@ -9,6 +9,7 @@ node_modules/
 .gitignore
 .mocharc.json
 .nycrc
+codegen.yml
 docker-compose-dev.yaml
 Dockerfile
 Dockerfile.dev
