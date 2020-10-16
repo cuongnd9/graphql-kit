@@ -14,9 +14,6 @@ const sequelize = new Sequelize({
   port: config.pgPort,
   // eslint-disable-next-line no-console
   logging: config.nodeEnv === 'development' ? console.log : false,
-  define: {
-    underscored: true,
-  },
 });
 
 sequelize

@@ -15,7 +15,15 @@
     "test:coverage": "NODE_PATH=./ NODE_ENV=test nyc mocha --exit",
     "docker-compose:start": "./scripts/start.sh",
     "docker-compose:stop": "./scripts/stop.sh",
-    "docker-compose:rebuild": "./scripts/rebuild.sh"
+    "docker-compose:rebuild": "./scripts/rebuild.sh",
+    "premigration:status": "yarn build",
+    "premigration:up": "yarn build",
+    "premigration:down": "yarn build",
+    "migration:status": "sequelize-cli db:migrate:status --url \"postgresql://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@${PG_HOST:-0.0.0.0}:${PG_PORT:-5432}/${PG_DB:-postgres}\" --migrations-path \"./src/migrations\"",
+    "migration:up": "sequelize-cli db:migrate --url \"postgresql://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@${PG_HOST:-0.0.0.0}:${PG_PORT:-5432}/${PG_DB:-postgres}\" --migrations-path \"./src/migrations\"",
+    "migration:down": "sequelize-cli db:migrate:undo --url \"postgresql://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@${PG_HOST:-0.0.0.0}:${PG_PORT:-5432}/${PG_DB:-postgres}\" --migrations-path \"./src/migrations\"",
+    "prod:migration:up": "node ./build/components/migration/migrationUp",
+    "prod:migration:down": "node ./build/components/migration/migrationDown"
   },
   "lint-staged": {
     "*.ts": [
@@ -40,6 +48,7 @@
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.6",
+    "sequelize-cli": "^6.2.0",
     "umzug": "^2.3.0"
   },
   "devDependencies": {
