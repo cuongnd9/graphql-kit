@@ -19,9 +19,9 @@
     "premigration:status": "yarn build",
     "premigration:up": "yarn build",
     "premigration:down": "yarn build",
-    "migration:status": "sequelize-cli db:migrate:status --url \"postgresql://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@${PG_HOST:-0.0.0.0}:${PG_PORT:-5432}/${PG_DB:-postgres}\" --migrations-path \"./src/migrations\"",
-    "migration:up": "sequelize-cli db:migrate --url \"postgresql://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@${PG_HOST:-0.0.0.0}:${PG_PORT:-5432}/${PG_DB:-postgres}\" --migrations-path \"./src/migrations\"",
-    "migration:down": "sequelize-cli db:migrate:undo --url \"postgresql://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@${PG_HOST:-0.0.0.0}:${PG_PORT:-5432}/${PG_DB:-postgres}\" --migrations-path \"./src/migrations\"",
+    "migration:status": "sequelize-cli db:migrate:status --url \"postgresql://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@${PG_HOST:-0.0.0.0}:${PG_PORT:-5432}/${PG_DB:-postgres}\" --migrations-path \"./build/migrations\"",
+    "migration:up": "sequelize-cli db:migrate --url \"postgresql://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@${PG_HOST:-0.0.0.0}:${PG_PORT:-5432}/${PG_DB:-postgres}\" --migrations-path \"./build/migrations\"",
+    "migration:down": "sequelize-cli db:migrate:undo --url \"postgresql://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@${PG_HOST:-0.0.0.0}:${PG_PORT:-5432}/${PG_DB:-postgres}\" --migrations-path \"./build/migrations\"",
     "prod:migration:up": "node ./build/components/migration/migrationUp",
     "prod:migration:down": "node ./build/components/migration/migrationDown"
   },
@@ -47,8 +47,8 @@
     "lodash": "^4.17.15",
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
+    "remove": "^0.1.5",
     "sequelize": "^5.21.6",
-    "sequelize-cli": "^6.2.0",
     "umzug": "^2.3.0"
   },
   "devDependencies": {
@@ -81,6 +81,7 @@
     "mocha": "^7.1.2",
     "nodemon": "^1.19.4",
     "nyc": "^15.0.1",
+    "sequelize-cli": "^6.2.0",
     "sinon": "^9.0.2",
     "sinon-test": "^3.0.0",
     "source-map-support": "^0.5.19",
