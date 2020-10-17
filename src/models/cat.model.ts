@@ -1,6 +1,5 @@
-import { Model, DataTypes } from 'sequelize';
+import { Model, DataTypes, Sequelize } from 'sequelize';
 
-import { sequelize } from './sequelize';
 import Category from './category.model';
 
 class Cat extends Model {
@@ -26,29 +25,33 @@ class Cat extends Model {
   }
 }
 
-Cat.init({
-  id: {
-    type: DataTypes.UUID,
-    primaryKey: true,
-    defaultValue: DataTypes.UUIDV4,
-  },
-  name: {
-    type: DataTypes.STRING,
-  },
-  color: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
-  categoryId: {
-    type: DataTypes.UUID,
-    references: {
-      model: 'categories',
-      key: 'id',
+const initModel = (sequelize: Sequelize) => {
+  Cat.init({
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      defaultValue: DataTypes.UUIDV4,
     },
-  },
-}, {
-  sequelize,
-  modelName: 'cats',
-});
+    name: {
+      type: DataTypes.STRING,
+    },
+    color: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    categoryId: {
+      type: DataTypes.UUID,
+      references: {
+        model: 'categories',
+        key: 'id',
+      },
+    },
+  }, {
+    sequelize,
+    underscored: true,
+    modelName: 'cats',
+  });
+};
 
+export { initModel };
 export default Cat;
