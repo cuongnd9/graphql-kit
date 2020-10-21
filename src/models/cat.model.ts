@@ -49,7 +49,7 @@ const initModel = (sequelize: Sequelize) => {
   }, {
     sequelize,
     underscored: true,
-    modelName: 'cats',
+    tableName: 'cats',
   });
 };
 
