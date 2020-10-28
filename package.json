@@ -1,6 +1,6 @@
 {
   "name": "graphql-kit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "src/index.ts",
   "description": "🍣 A Node kit with TypeScript, GraphQL, Sequelize, PostgreSQL and awesome tools.",
   "scripts": {

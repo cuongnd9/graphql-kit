@@ -13,6 +13,7 @@ const typeDef = `
     cats: [Cat]
     createdAt: DateTime
     updatedAt: DateTime
+    deletedAt: DateTime
   }
 `;
 

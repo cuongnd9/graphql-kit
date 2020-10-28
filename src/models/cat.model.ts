@@ -49,6 +49,7 @@ const initModel = (sequelize: Sequelize) => {
   }, {
     sequelize,
     underscored: true,
+    paranoid: true,
     tableName: 'cats',
   });
 };
