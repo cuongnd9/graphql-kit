@@ -27,6 +27,9 @@ const migration = {
     updated_at: {
       type: DataTypes.DATE,
     },
+    deleted_at: {
+      type: DataTypes.DATE,
+    },
   }, {
     transaction: t,
   })),

@@ -15,6 +15,7 @@ const typeDef = `
     category: Category
     createdAt: DateTime
     updatedAt: DateTime
+    deletedAt: DateTime
   }
 `;
 
