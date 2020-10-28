@@ -15,6 +15,8 @@ class Cat extends Model {
 
   public updatedAt: Date;
 
+  public deletedAt: Date;
+
   public category?: Category;
 
   static associate() {
