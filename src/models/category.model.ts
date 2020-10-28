@@ -11,6 +11,8 @@ class Category extends Model {
 
   public updatedAt: Date;
 
+  public deletedAt: Date;
+
   public cats?: Cat[];
 
   static associate() {
