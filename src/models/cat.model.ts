@@ -44,7 +44,7 @@ const initModel = (sequelize: Sequelize) => {
     categoryId: {
       type: DataTypes.UUID,
       references: {
-        model: 'categories',
+        model: 'category',
         key: 'id',
       },
     },
@@ -52,7 +52,7 @@ const initModel = (sequelize: Sequelize) => {
     sequelize,
     underscored: true,
     paranoid: true,
-    tableName: 'cats',
+    tableName: 'cat',
   });
 };
 

@@ -1,7 +1,7 @@
 import { QueryInterface, DataTypes } from 'sequelize';
 
 const migration = {
-  up: (queryInterface: QueryInterface) => queryInterface.sequelize.transaction((t) => queryInterface.createTable('categories', {
+  up: (queryInterface: QueryInterface) => queryInterface.sequelize.transaction((t) => queryInterface.createTable('category', {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
@@ -22,7 +22,7 @@ const migration = {
   }, {
     transaction: t,
   })),
-  down: (queryInterface: QueryInterface) => queryInterface.sequelize.transaction((t) => queryInterface.dropTable('categories', { transaction: t })),
+  down: (queryInterface: QueryInterface) => queryInterface.sequelize.transaction((t) => queryInterface.dropTable('category', { transaction: t })),
 };
 
 export default migration;
